@@ -11,6 +11,31 @@ export const navItems: INavData[] = [
     }
   },
   {
+    name: 'FoodItem',
+    url: '/viewFoodItem',
+    icon: 'icon-puzzle'
+  },
+  {
+    name: "FoodContent",
+    url: "/viewFoodContent",
+    icon: 'icon-note'
+  },
+  {
+    name: "FoodImage",
+    url: "/viewFoodImage",
+    icon: "icon-map"
+  },
+  {
+    name: "FoodImageReplace",
+    url: "/viewFoodImageReplace",
+    icon: "cui-tags"
+  },
+  {
+    name: "FoodSection",
+    url: "/viewFoodSection",
+    icon: "cui-settings"
+  },
+  {
     title: true,
     name: 'Theme'
   },
@@ -233,19 +258,19 @@ export const navItems: INavData[] = [
     },
     attributes: { disabled: true },
   },
-  {
-    name: 'Download CoreUI',
-    url: 'http://coreui.io/angular/',
-    icon: 'icon-cloud-download',
-    class: 'mt-auto',
-    variant: 'success',
-    attributes: { target: '_blank', rel: 'noopener' }
-  },
-  {
-    name: 'Try CoreUI PRO',
-    url: 'http://coreui.io/pro/angular/',
-    icon: 'icon-layers',
-    variant: 'danger',
-    attributes: { target: '_blank', rel: 'noopener' }
-  }
+  // {
+  //   name: 'Download CoreUI',
+  //   url: 'http://coreui.io/angular/',
+  //   icon: 'icon-cloud-download',
+  //   class: 'mt-auto',
+  //   variant: 'success',
+  //   attributes: { target: '_blank', rel: 'noopener' }
+  // },
+  // {
+  //   name: 'Try CoreUI PRO',
+  //   url: 'http://coreui.io/pro/angular/',
+  //   icon: 'icon-layers',
+  //   variant: 'danger',
+  //   attributes: { target: '_blank', rel: 'noopener' }
+  // }
 ];

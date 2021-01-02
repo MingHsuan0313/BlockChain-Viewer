@@ -41,6 +41,7 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
+import { AlertComponent, AlertModule } from 'ngx-bootstrap/alert';
 
 @NgModule({
   imports: [
@@ -62,6 +63,7 @@ import { ChartsModule } from 'ng2-charts';
     AppComponent,
     ...APP_CONTAINERS,
     P404Component,
+    AlertComponent,
     P500Component,
     LoginComponent,
     RegisterComponent

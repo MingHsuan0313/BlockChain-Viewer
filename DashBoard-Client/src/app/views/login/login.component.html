@@ -31,9 +31,11 @@
                       <button type="button" class="btn btn-link px-0">Forgot password?</button>
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="row" style="margin-top: 5px;">
                     <div class="col-12">
-                      <span *ngIf="loginFailed" style="color: red;">username or password not correctly</span>
+                      <alert *ngIf="loginFailed" type="danger">
+                        <strong>username or password not correct.</strong>
+                      </alert>
                     </div>
                   </div>
                 </form>

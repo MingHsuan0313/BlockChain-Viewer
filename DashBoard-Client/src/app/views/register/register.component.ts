@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import axios from 'axios';
+import { AlertConfig } from 'ngx-bootstrap/alert';
+import { getAlertConfig } from '../notifications/alerts.component';
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: 'register.component.html'
+  templateUrl: 'register.component.html',
+  encapsulation: ViewEncapsulation.None,
+  providers: [{ provide: AlertConfig, useFactory: getAlertConfig }]
 })
 export class RegisterComponent {
   username: string;
@@ -38,8 +42,6 @@ export class RegisterComponent {
       alert('email not correctly');
       return false;
     }
-
-
     return true;
   }
 
