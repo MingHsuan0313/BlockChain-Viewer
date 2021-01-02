@@ -30,7 +30,11 @@ export class LoginComponent {
       console.log(response)
       let status = response.status;
       if(status == 200)
-        this.router.navigate(['./dashboard']);
+        this.router.navigate(['./dashboard'],{
+          state: {
+            username:this.username
+          }
+        });
     },(error) => {
       console.log(error)
       this.loginFailed = true;
