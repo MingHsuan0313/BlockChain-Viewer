@@ -27,11 +27,11 @@ const APP_CONTAINERS = [
 ];
 
 import {
-  AppAsideModule,
   AppBreadcrumbModule,
   AppHeaderModule,
   AppFooterModule,
   AppSidebarModule,
+  AppAsideModule,
 } from '@coreui/angular';
 
 // Import routing module
@@ -42,6 +42,11 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { AlertComponent, AlertModule } from 'ngx-bootstrap/alert';
+import { FoodItemComponent } from './containers/views/food-item/food-item.component';
+import { FoodContentComponent } from './containers/views/food-content/food-content.component';
+import { FoodImageComponent } from './containers/views/food-image/food-image.component';
+import { FoodImageReplaceComponent } from './containers/views/food-image-replace/food-image-replace.component';
+import { FoodSectionComponent } from './containers/views/food-section/food-section.component';
 
 @NgModule({
   imports: [
@@ -66,7 +71,12 @@ import { AlertComponent, AlertModule } from 'ngx-bootstrap/alert';
     AlertComponent,
     P500Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    FoodItemComponent,
+    FoodContentComponent,
+    FoodImageComponent,
+    FoodImageReplaceComponent,
+    FoodSectionComponent
   ],
   providers: [{
     provide: LocationStrategy,

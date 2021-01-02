@@ -3,6 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
+import { FoodContentComponent } from './containers/views/food-content/food-content.component';
+import { FoodImageReplaceComponent } from './containers/views/food-image-replace/food-image-replace.component';
+import { FoodImageComponent } from './containers/views/food-image/food-image.component';
+import { FoodItemComponent } from './containers/views/food-item/food-item.component';
+import { FoodSectionComponent } from './containers/views/food-section/food-section.component';
 
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
@@ -51,6 +56,42 @@ export const routes: Routes = [
     },
     children: [
       {
+        path: 'viewFoodItem',
+        component: FoodItemComponent,
+        data: {
+          title: "FoodItem Page"
+        }
+      },
+      {
+        path: 'viewFoodContent',
+        component: FoodContentComponent,
+        data: {
+          title: "FoodContent Page"
+        }
+      },
+      {
+        path: 'viewFoodImage',
+        component: FoodImageComponent,
+        data: {
+          title: "FoodImage Page"
+        }
+      },
+      {
+        path: 'viewFoodImageReplace',
+        component: FoodImageReplaceComponent,
+        data: {
+          title: "FoodImageReplace Page"
+        }
+      },
+      {
+        path: 'viewFoodSection',
+        component: FoodSectionComponent,
+        data: {
+          title: "FoodSection Page"
+        }
+      },
+
+      {
         path: 'base',
         loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
       },
@@ -88,7 +129,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
