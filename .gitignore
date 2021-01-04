@@ -1,2 +1,2 @@
-./DashBoard-Client/node_modules
-./Server/node_modules
+/DashBoard-Client/node_modules
+/Server/node_modules
