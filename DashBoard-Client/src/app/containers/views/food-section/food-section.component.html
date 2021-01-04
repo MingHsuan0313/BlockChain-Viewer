@@ -1,1 +1,160 @@
-<p>food-section works!</p>
+<div class="container">
+    <div class="input-prepend input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-search"></i></span>
+        </div>
+        <select (change)="selectFilterOption($event.target.value)" name="" id="" class="input-group-prepend">
+            <option value="logno">Logno</option>
+            <option value="title">Title</option>
+            <option value="begin">Begin</option>
+            <option value="end">End</option>
+            <option value="all">All</option>
+        </select>
+        <input [(ngModel)]="searchValue" id="prependedInput" class="form-control" size="16" type="text"
+            placeholder="What do you want to filter">
+        <span class="input-group-append">
+            <button (click)="search()" class="btn btn-info" type="button">Search</button>
+        </span>
+        <mat-spinner style="margin-left: 15px; position: relative; top:5px; color:#333333" [diameter]="30" *ngIf="isSearching">
+        </mat-spinner>
+
+    </div>
+    <br>
+    <br>
+
+    <!-- <div class="col-lg-6"> -->
+    <!-- <div class="col-lg-8"> -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> View Food Section Event
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>event</th>
+                            <th>blockno</th>
+                            <th>logno</th>
+                            <th>title</th>
+                            <th>begin</th>
+                            <th>end</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Samppa Nori</td>
+                            <td>2012/01/01</td>
+                            <td>Member</td>
+                            <td>
+                                <span class="badge badge-success">Active</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Estavan Lykos</td>
+                            <td>2012/02/01</td>
+                            <td>Staff</td>
+                            <td>
+                                <span class="badge badge-danger">Banned</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Chetan Mohamed</td>
+                            <td>2012/02/01</td>
+                            <td>{{ "My String Is Too Long i think" | limitTo: 9 }} </td>
+                            <td>
+                                <span class="badge badge-secondary">Inactive</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Derick Maximinus</td>
+                            <td>2012/03/01</td>
+                            <td>Member</td>
+                            <td>
+                                <span class="badge badge-warning">Pending</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Friderik Dávid</td>
+                            <td>2012/01/21</td>
+                            <td>Staff</td>
+                            <td>
+                                <span class="badge badge-success">Active</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    <!-- </div> -->
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                Send Food Section Transaction
+            </div>
+            <div class="card-body">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">logno</span>
+                            </div>
+                            <input type="text" id="username3" name="username3" class="form-control">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">title</span>
+                            </div>
+                            <input type="email" id="email3" name="email3" class="form-control" autocomplete="email">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">begin</span>
+                            </div>
+                            <input type="password" id="password3" name="password3" class="form-control"
+                                autocomplete="current-password">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">end</span>
+                            </div>
+                            <input type="password" id="password3" name="password3" class="form-control"
+                                autocomplete="current-password">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-actions">
+                        <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

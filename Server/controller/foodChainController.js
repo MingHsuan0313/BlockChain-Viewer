@@ -24,7 +24,7 @@ module.exports = function (app) {
         if(logdate != undefined) {
             filterObject['logdate'] = logdate;
         }
-
+        filterObject['logno'] = '7122'
         console.log(req.query);
         contract.getPastEvents("FoodSection", {
             filter: filterObject,
@@ -32,6 +32,7 @@ module.exports = function (app) {
             toBlock: "latest"
         }).then(async (events) => {
             // console.log(events);
+            console.log(events);
             res.status(200).send(JSON.stringify(events));
         }).catch(err => {})
     })
@@ -58,5 +59,42 @@ module.exports = function (app) {
         let title = req.query['title'];
         let begin = req.query['begin'];
         let end = req.query['end'];
+        let filterObject = {};
+        if(logno != undefined) {
+            if(logno.length != 0)
+                filterObject['logno'] = logno;
+        }
+        if(title != undefined) {
+            if(title.length != 0)
+                filterObject['title'] = title;
+        }
+        if(begin != undefined) {
+            if(begin.length != 0)
+                filterObject['begin'] = begin;
+        }
+        if(end != undefined) {
+            if(end.length != 0)
+                filterObject['end'] = end;
+        }
+        console.log("filter object below");
+        console.log(filterObject);
+        contract.getPastEvents("FoodSection", {
+            filter: filterObject,
+            fromBlock: 0,
+            toBlock: 'latest'
+        }).then((events) => {
+            let responseObject = [];
+            for(let index = 0;index < events.length;index++) {
+                let event = {};
+                event['begin'] = events[index]['returnValues']['begin'];
+                event['end'] = events[index]['returnValues']['end'];
+                event['logno'] = events[index]['returnValues']['logno'];
+                event['title'] = events[index]['returnValues']['title'];
+                event['blockNumber'] = events[index]['blockNumber'];
+                event['event'] = events[index]['event'];
+                responseObject.push(event);
+            }
+            res.status(200).send(JSON.stringify(responseObject))
+        }).catch(err => {});
     }) 
 }
