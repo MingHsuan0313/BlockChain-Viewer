@@ -23,19 +23,26 @@ export class LoginComponent {
 
   async login() {
     console.log(`username : ${this.username}\npassword: ${this.password}`);
-    await axios.post('http://localhost:8000/auth/login',{
-      username:this.username,
-      password:this.password
+    await axios.post('http://localhost:8000/auth/login', {
+      username: this.username,
+      password: this.password,
+    }, {
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+      
     }).then((response) => {
       console.log(response)
       let status = response.status;
-      if(status == 200)
-        this.router.navigate(['./dashboard'],{
+      if (status == 200)
+        this.router.navigate(['./dashboard'], {
           state: {
-            username:this.username
+            username: this.username
           }
         });
-    },(error) => {
+    }, (error) => {
       console.log(error)
       this.loginFailed = true;
     })
