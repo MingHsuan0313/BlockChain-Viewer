@@ -1,0 +1,4 @@
+git scoverage
+dist
+node_modules
+*.json

@@ -1,0 +1,222 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "logno",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "logname",
+				"type": "string"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "logorg",
+				"type": "string"
+			}
+		],
+		"name": "FoodContent",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "logno",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "url",
+				"type": "string"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "filehash",
+				"type": "string"
+			}
+		],
+		"name": "FoodImage",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "url",
+				"type": "string"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "oldhash",
+				"type": "string"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "newhash",
+				"type": "string"
+			}
+		],
+		"name": "FoodImageReplace",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "logno",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "loghash",
+				"type": "string"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "logdate",
+				"type": "string"
+			}
+		],
+		"name": "FoodItem",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "logno",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "begin",
+				"type": "string"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "end",
+				"type": "string"
+			}
+		],
+		"name": "FoodSection",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "logno",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "loghash",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "logname",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "logorg",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "logdate",
+				"type": "string"
+			}
+		],
+		"name": "FoodLog",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "logno",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "url",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "filehash",
+				"type": "string"
+			}
+		],
+		"name": "FoodLogImage",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "logno",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "begin",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "end",
+				"type": "string"
+			}
+		],
+		"name": "FoodLogSection",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

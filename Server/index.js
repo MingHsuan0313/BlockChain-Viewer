@@ -11,6 +11,7 @@ app.use(cookieParser());
 
 global.sessionStorage = {};
 require('./controller/authController')(app);
+require('./controller/foodChainController')(app);
 
 
 
