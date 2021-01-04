@@ -15,7 +15,8 @@
         <span class="input-group-append">
             <button (click)="search()" class="btn btn-info" type="button">Search</button>
         </span>
-        <mat-spinner style="margin-left: 15px; position: relative; top:5px; color:#333333" [diameter]="30" *ngIf="isSearching">
+        <mat-spinner style="margin-left: 15px; position: relative; top:5px; color:#333333" [diameter]="30"
+            *ngIf="isSearching">
         </mat-spinner>
 
     </div>
@@ -24,77 +25,48 @@
 
     <!-- <div class="col-lg-6"> -->
     <!-- <div class="col-lg-8"> -->
-        <div class="card">
-            <div class="card-header">
-                <i class="fa fa-align-justify"></i> View Food Section Event
-            </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>event</th>
-                            <th>blockno</th>
-                            <th>logno</th>
-                            <th>title</th>
-                            <th>begin</th>
-                            <th>end</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify"></i> View Food Section Event
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>event</th>
+                        <th>blockno</th>
+                        <th>logno</th>
+                        <th>title</th>
+                        <th>begin</th>
+                        <th>end</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let event of foodSectionEventsShowed">
+                        <td>{{event.event | limitTo:10}}</td>
+                        <td>{{event.blockNumber | limitTo:10}}</td>
+                        <td>{{event.logno | limitTo: 10}}</td>
+                        <td>{{event.title | limitTo: 10}}</td>
+                        <td>{{event.begin | limitTo: 10}}</td>
+                        <td>{{event.end | limitTo: 10}}</td>
+                    </tr>
+                    <!-- <tr>
                             <td>Samppa Nori</td>
                             <td>2012/01/01</td>
                             <td>Member</td>
                             <td>
                                 <span class="badge badge-success">Active</span>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Estavan Lykos</td>
-                            <td>2012/02/01</td>
-                            <td>Staff</td>
-                            <td>
-                                <span class="badge badge-danger">Banned</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Chetan Mohamed</td>
-                            <td>2012/02/01</td>
-                            <td>{{ "My String Is Too Long i think" | limitTo: 9 }} </td>
-                            <td>
-                                <span class="badge badge-secondary">Inactive</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Derick Maximinus</td>
-                            <td>2012/03/01</td>
-                            <td>Member</td>
-                            <td>
-                                <span class="badge badge-warning">Pending</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Friderik Dávid</td>
-                            <td>2012/01/21</td>
-                            <td>Staff</td>
-                            <td>
-                                <span class="badge badge-success">Active</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </div>
+                        </tr> -->
+                </tbody>
+            </table>
+            <ul id="foodSectionTabLink" class="pagination">
+                <li class="page-item" *ngFor="let tab of tabs" (click)="changePage($event,tab)">
+                    <a class="page-link" >{{tab}}</a>
+                </li>
+            </ul>
         </div>
+    </div>
     <!-- </div> -->
     <div class="col-lg-8">
         <div class="card">
@@ -108,7 +80,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">logno</span>
                             </div>
-                            <input type="text" id="username3" name="username3" class="form-control">
+                            <input [(ngModel)]="logno" type="text" id="username3" name="username3" class="form-control">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                             </div>
@@ -119,7 +91,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">title</span>
                             </div>
-                            <input type="email" id="email3" name="email3" class="form-control" autocomplete="email">
+                            <input [(ngModel)]="title" type="email" id="email3" name="email3" class="form-control" autocomplete="email">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                             </div>
@@ -130,7 +102,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">begin</span>
                             </div>
-                            <input type="password" id="password3" name="password3" class="form-control"
+                            <input [(ngModel)]="begin" type="text" id="password3" name="password3" class="form-control"
                                 autocomplete="current-password">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
@@ -142,7 +114,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">end</span>
                             </div>
-                            <input type="password" id="password3" name="password3" class="form-control"
+                            <input [(ngModel)]="end" type="text" id="password3" name="password3" class="form-control"
                                 autocomplete="current-password">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
@@ -151,7 +123,7 @@
                     </div>
 
                     <div class="form-group form-actions">
-                        <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                        <button (click)="submitData()" type="submit" class="btn btn-sm btn-primary">Submit</button>
                     </div>
                 </form>
             </div>

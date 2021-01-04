@@ -15,13 +15,13 @@ module.exports = function (app) {
         let loghash = req.query['loghash'];
         let logdate = req.query['logdate'];
         let filterObject = {};
-        if(logno != undefined) {
+        if (logno != undefined) {
             filterObject['logno'] = logno;
         }
-        if(loghash != undefined) {
+        if (loghash != undefined) {
             filterObject['loghash'] = loghash;
         }
-        if(logdate != undefined) {
+        if (logdate != undefined) {
             filterObject['logdate'] = logdate;
         }
         filterObject['logno'] = '7122'
@@ -54,26 +54,44 @@ module.exports = function (app) {
 
     })
 
+    app.post('/foodchain/foodsection', validateCookie, (req, res) => {
+        let {
+            logno,
+            title,
+            begin,
+            end
+        } = req.body;
+        const account = web3.eth.accounts.privateKeyToAccount("0xab09158d9a817633c28c74b6e6c1bf34c26ffadc1a961870beaeef38b0753495");
+        web3.eth.accounts.wallet.add(account);
+        web3.eth.defaultAccount = account.address;
+        contract.methods.FoodLogSection(parseInt(logno), title, begin, end)
+            .send({
+                from: web3.eth.defaultAccount,
+                gas: 2000000
+        });
+        res.status(200).send("ok");
+    })
+
     app.get('/foodchain/foodsection', validateCookie, (req, res) => {
         let logno = req.query['logno'];
         let title = req.query['title'];
         let begin = req.query['begin'];
         let end = req.query['end'];
         let filterObject = {};
-        if(logno != undefined) {
-            if(logno.length != 0)
+        if (logno != undefined) {
+            if (logno.length != 0)
                 filterObject['logno'] = logno;
         }
-        if(title != undefined) {
-            if(title.length != 0)
+        if (title != undefined) {
+            if (title.length != 0)
                 filterObject['title'] = title;
         }
-        if(begin != undefined) {
-            if(begin.length != 0)
+        if (begin != undefined) {
+            if (begin.length != 0)
                 filterObject['begin'] = begin;
         }
-        if(end != undefined) {
-            if(end.length != 0)
+        if (end != undefined) {
+            if (end.length != 0)
                 filterObject['end'] = end;
         }
         console.log("filter object below");
@@ -83,8 +101,9 @@ module.exports = function (app) {
             fromBlock: 0,
             toBlock: 'latest'
         }).then((events) => {
+            console.log(events);
             let responseObject = [];
-            for(let index = 0;index < events.length;index++) {
+            for (let index = 0; index < events.length; index++) {
                 let event = {};
                 event['begin'] = events[index]['returnValues']['begin'];
                 event['end'] = events[index]['returnValues']['end'];
@@ -96,5 +115,5 @@ module.exports = function (app) {
             }
             res.status(200).send(JSON.stringify(responseObject))
         }).catch(err => {});
-    }) 
+    })
 }

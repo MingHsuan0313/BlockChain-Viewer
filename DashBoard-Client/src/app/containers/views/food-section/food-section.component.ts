@@ -9,22 +9,78 @@ import axios from 'axios';
 export class FoodSectionComponent implements OnInit {
 
   foodSectionEvents: FoodSectionEvent[];
+  foodSectionEventsShowed: FoodSectionEvent[];
+
   searchOption: string;
   searchValue: string;
   isSearching: boolean;
-  myString: string;
+  tabs: any[];
+
+  logno: string;
+  title: string;
+  begin: string;
+  end: string;
+
 
   constructor() {
-    this.myString = "asldahdkjaknwqnnwqjqnnwqkrnjwqnwqjnwqrqq";
     this.searchOption = "logno";
     this.searchValue = "";
     this.isSearching = false;
+    this.tabs = [];
+
+    this.logno = "";
+    this.title = "";
+    this.begin = "";
+    this.end = "";
+  }
+
+  async submitData() {
+    console.log(this.logno);
+    console.log(this.title);
+    console.log(this.begin);
+    console.log(this.end);
+    if(this.logno.length > 0 && this.title.length > 0) {
+      if(this.begin.length > 0 && this.end.length > 0) {
+        console.log("valid");
+        await axios.post('http://localhost:8000/foodchain/foodsection', {
+          logno: this.logno,
+          title: this.title,
+          begin: this.begin,
+          end: this.end
+        },{
+          withCredentials: true
+        }).then((response) => {
+          console.log(response['data'])
+          this.logno = "";
+          this.title = "";
+          this.begin = "";
+          this.end = "";
+        }).catch((error) => {})
+      }
+      console.log("invalid")
+    }
+    else
+      console.log("invalid");
   }
 
   selectFilterOption(value) {
     console.log('select option');
     console.log(value)
     this.searchOption = value;
+  }
+
+  changePage(event, tab) {
+    let begin = 5 * tab;
+    let end = begin + 5;
+    this.foodSectionEventsShowed = this.foodSectionEvents.slice(begin, end);
+
+    let ulElement = event.target.parentElement.parentElement;
+    let liList = ulElement.children;
+    for (let index = 0; index < liList.length; index++) {
+      liList[index].className = "page-item";
+    }
+    event.target.parentElement.className = "page-item active";
+    // console.log(ulElement);
   }
 
   async search() {
@@ -38,13 +94,18 @@ export class FoodSectionComponent implements OnInit {
       withCredentials: true
     }).then((response) => {
       this.isSearching = false;
+      this.foodSectionEvents = [];
       let status = response.status;
-      if(status != 200)
+      if (status != 200)
         return;
-      for(let index = 0;index < response.data.length;index++) {
+      for (let index = 0; index < response.data.length; index++) {
         let foodSectionEvent = response.data[index];
         this.foodSectionEvents.push(foodSectionEvent);
       }
+      let tabNum = response.data.length / 5;
+      this.tabs = [];
+      for (let index = 0; index < tabNum; index++)
+        this.tabs.push(index);
     }).catch(error => {
       this.isSearching = false;
     })
