@@ -1,0 +1,48 @@
+[2021-01-04 14:47:24.195] [exthost] [info] extension host started
+[2021-01-04 14:47:24.240] [exthost] [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication {"startup":false,"extensionId":{"value":"vscode.microsoft-authentication","_lower":"vscode.microsoft-authentication"},"activationEvent":"onAuthenticationRequest:microsoft"}
+[2021-01-04 14:47:24.240] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/microsoft-authentication/dist/extension.js
+[2021-01-04 14:47:24.251] [exthost] [info] ExtensionService#_doActivateExtension GrapeCity.gc-excelviewer {"startup":false,"extensionId":{"value":"GrapeCity.gc-excelviewer","_lower":"grapecity.gc-excelviewer"},"activationEvent":"onLanguage:plaintext"}
+[2021-01-04 14:47:24.251] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/grapecity.gc-excelviewer-3.0.40/dist/extension
+[2021-01-04 14:47:24.254] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2021-01-04 14:47:24.254] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2021-01-04 14:47:24.258] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2021-01-04 14:47:24.258] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/emmet/dist/node/emmetNodeMain
+[2021-01-04 14:47:24.275] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-01-04 14:47:24.275] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/git/dist/main
+[2021-01-04 14:47:24.298] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2021-01-04 14:47:24.298] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/merge-conflict/dist/mergeConflictMain
+[2021-01-04 14:47:24.302] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2021-01-04 14:47:24.302] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/search-result/dist/extension.js
+[2021-01-04 14:47:24.304] [exthost] [info] ExtensionService#_doActivateExtension alefragnani.project-manager {"startup":true,"extensionId":{"value":"alefragnani.project-manager","_lower":"alefragnani.project-manager"},"activationEvent":"*"}
+[2021-01-04 14:47:24.304] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/alefragnani.project-manager-12.0.1/dist/extension
+[2021-01-04 14:47:24.314] [exthost] [info] ExtensionService#_doActivateExtension asvetliakov.vscode-neovim {"startup":true,"extensionId":{"value":"asvetliakov.vscode-neovim","_lower":"asvetliakov.vscode-neovim"},"activationEvent":"*"}
+[2021-01-04 14:47:24.314] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/asvetliakov.vscode-neovim-0.0.76/dist/extension.js
+[2021-01-04 14:47:24.332] [exthost] [info] ExtensionService#_doActivateExtension CoenraadS.bracket-pair-colorizer {"startup":true,"extensionId":{"value":"CoenraadS.bracket-pair-colorizer","_lower":"coenraads.bracket-pair-colorizer"},"activationEvent":"*"}
+[2021-01-04 14:47:24.332] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/coenraads.bracket-pair-colorizer-1.0.61/out/src/extension
+[2021-01-04 14:47:24.346] [exthost] [info] ExtensionService#_doActivateExtension formulahendry.auto-close-tag {"startup":true,"extensionId":{"value":"formulahendry.auto-close-tag","_lower":"formulahendry.auto-close-tag"},"activationEvent":"*"}
+[2021-01-04 14:47:24.346] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/formulahendry.auto-close-tag-0.5.9/out/src/extension
+[2021-01-04 14:47:24.347] [exthost] [info] ExtensionService#_doActivateExtension formulahendry.auto-rename-tag {"startup":true,"extensionId":{"value":"formulahendry.auto-rename-tag","_lower":"formulahendry.auto-rename-tag"},"activationEvent":"*"}
+[2021-01-04 14:47:24.347] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/formulahendry.auto-rename-tag-0.1.5/packages/extension/dist/extensionMain.js
+[2021-01-04 14:47:24.353] [exthost] [info] ExtensionService#_doActivateExtension mhutchie.git-graph {"startup":true,"extensionId":{"value":"mhutchie.git-graph","_lower":"mhutchie.git-graph"},"activationEvent":"*"}
+[2021-01-04 14:47:24.353] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/mhutchie.git-graph-1.28.0/out/extension.js
+[2021-01-04 14:47:24.378] [exthost] [info] ExtensionService#_doActivateExtension PKief.material-icon-theme {"startup":true,"extensionId":{"value":"PKief.material-icon-theme","_lower":"pkief.material-icon-theme"},"activationEvent":"*"}
+[2021-01-04 14:47:24.378] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/pkief.material-icon-theme-4.4.0/dist/extension
+[2021-01-04 14:47:24.386] [exthost] [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer {"startup":true,"extensionId":{"value":"ritwickdey.LiveServer","_lower":"ritwickdey.liveserver"},"activationEvent":"*"}
+[2021-01-04 14:47:24.386] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/ritwickdey.liveserver-5.6.1/out/src/extension
+[2021-01-04 14:47:24.622] [exthost] [info] ExtensionService#_doActivateExtension slevesque.vscode-hexdump {"startup":true,"extensionId":{"value":"slevesque.vscode-hexdump","_lower":"slevesque.vscode-hexdump"},"activationEvent":"*"}
+[2021-01-04 14:47:24.622] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/slevesque.vscode-hexdump-1.8.1/out/src/extension
+[2021-01-04 14:47:24.650] [exthost] [info] ExtensionService#_doActivateExtension vscodevim.vim {"startup":true,"extensionId":{"value":"vscodevim.vim","_lower":"vscodevim.vim"},"activationEvent":"*"}
+[2021-01-04 14:47:24.650] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/vscodevim.vim-1.18.5/out/extension
+[2021-01-04 14:47:24.678] [exthost] [info] ExtensionService#_doActivateExtension zhuangtongfa.material-theme {"startup":true,"extensionId":{"value":"zhuangtongfa.material-theme","_lower":"zhuangtongfa.material-theme"},"activationEvent":"*"}
+[2021-01-04 14:47:24.678] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/zhuangtongfa.material-theme-3.9.12/out/extension.js
+[2021-01-04 14:47:24.939] [exthost] [info] ExtensionService#_doActivateExtension vscode.github {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-01-04 14:47:24.939] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/github/dist/extension.js
+[2021-01-04 14:47:24.944] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.js-debug {"startup":false,"extensionId":{"value":"ms-vscode.js-debug","_lower":"ms-vscode.js-debug"},"activationEvent":"onCommand:extension.js-debug.clearAutoAttachVariables"}
+[2021-01-04 14:47:24.944] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/ms-vscode.js-debug/src/extension.js
+[2021-01-04 14:47:25.063] [exthost] [info] eager extensions activated
+[2021-01-04 14:47:25.095] [exthost] [info] ExtensionService#_doActivateExtension alefragnani.Bookmarks {"startup":false,"extensionId":{"value":"alefragnani.Bookmarks","_lower":"alefragnani.bookmarks"},"activationEvent":"onStartupFinished"}
+[2021-01-04 14:47:25.095] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/alefragnani.bookmarks-12.1.0/dist/extension
+[2021-01-04 14:47:25.103] [exthost] [info] ExtensionService#_doActivateExtension eamodio.gitlens {"startup":false,"extensionId":{"value":"eamodio.gitlens","_lower":"eamodio.gitlens"},"activationEvent":"onStartupFinished"}
+[2021-01-04 14:47:25.103] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/timhsieh/.vscode/extensions/eamodio.gitlens-11.1.2/dist/gitlens
+[2021-01-04 14:47:25.151] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":false,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"onAuthenticationRequest:github"}
+[2021-01-04 14:47:25.152] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/github-authentication/dist/extension.js

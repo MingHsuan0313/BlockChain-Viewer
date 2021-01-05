@@ -37,6 +37,11 @@ module.exports = function (app) {
         }
     });
 
+    app.options('/auth/login', (req, res) => {
+        console.log("heree");
+        res.status(200),send("ok");
+    })
+
     app.post('/auth/login', (req, res) => {
         let {
             username,

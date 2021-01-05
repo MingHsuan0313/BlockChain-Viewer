@@ -3,16 +3,19 @@ const { randomBytes } = require('crypto');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const corsOptions = {
+    origin: ['http://localhost:4200'],
+    credentials: true
+}
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(cookieParser());
 
 global.sessionStorage = {};
 require('./controller/authController')(app);
 require('./controller/foodChainController')(app);
-
 
 
 

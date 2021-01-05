@@ -3,7 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { ReactiveFormsModule } from '@angular/forms';
+=======
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
+>>>>>>> e560ee972d7a07b1fead1f7cbe9e045850623c05
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
@@ -50,6 +54,7 @@ import { FoodContentComponent } from './containers/views/food-content/food-conte
 import { FoodImageComponent } from './containers/views/food-image/food-image.component';
 import { FoodImageReplaceComponent } from './containers/views/food-image-replace/food-image-replace.component';
 import { FoodSectionComponent } from './containers/views/food-section/food-section.component';
+import { TruncatePipe } from './app.pipe';
 
 @NgModule({
   imports: [
@@ -61,6 +66,7 @@ import { FoodSectionComponent } from './containers/views/food-section/food-secti
     AppBreadcrumbModule.forRoot(),
     AppFooterModule,
     AppHeaderModule,
+    MatProgressSpinnerModule,
     AppSidebarModule,
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
@@ -82,7 +88,8 @@ import { FoodSectionComponent } from './containers/views/food-section/food-secti
     FoodContentComponent,
     FoodImageComponent,
     FoodImageReplaceComponent,
-    FoodSectionComponent
+    FoodSectionComponent,
+    TruncatePipe
   ],
   providers: [{
     provide: LocationStrategy,
