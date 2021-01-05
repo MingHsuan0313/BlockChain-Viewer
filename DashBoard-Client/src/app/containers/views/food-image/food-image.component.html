@@ -1,1 +1,75 @@
-<p>food-image works!</p>
+
+
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="input-prepend input-group">
+            <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-search"></i></span>
+            <!-- <mat-form-field>
+                <mat-label>Choose an option</mat-label>
+                <mat-select>
+                  <mat-option value="option1">Option 1</mat-option>
+                  <mat-option value="option2">Option 2 </mat-option>
+                  <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field> -->
+              <select (change)="selectFilterOption($event.target.value)" class="form-control" >
+                <option value="logno">logno</option>
+                <option value="url">url</option>
+                <option value="filehash">filehash</option>
+              </select>
+            </div>
+            <input id="prependedInput" class="form-control" size="16" type="text" placeholder="Filter" formControlName="filterData">
+            <span class="input-group-append">
+            <button class="btn btn-info"  type="submit">Search</button>
+            </span>
+        </div>
+    </form>
+
+
+
+    <div class="animated fadeIn" style="margin-top: 30px;">
+
+        <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> Combined All Table
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped table-sm">
+                <thead>
+                    <tr>
+                    <th>logno</th>
+                    <th>url</th>
+                    <th>filehash</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let eachData of contractData">
+                        <td>{{eachData.returnValues.logno}}</td>
+                        <td>{{eachData.returnValues.url}}</td>
+                        <td>{{eachData.returnValues.filehash}}</td>
+                    </tr>
+                </tbody>
+                </table>
+                <nav>
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                    <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+                </nav>
+            </div>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+
