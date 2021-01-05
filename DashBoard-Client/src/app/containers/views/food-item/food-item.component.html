@@ -1,1 +1,67 @@
-<p>food-item works!</p>
+<div class="container">
+    <div class="input-prepend input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-search"></i></span>
+        </div>
+        <select (change)="selectFilterOption($event.target.value)" name="" id="" class="input-group-prepend">
+            <option value="logno">Logno</option>
+            <option value="loghash">loghash</option>
+            <option value="logdate">logdate</option>
+            <option value="all">All</option>
+        </select>
+        <input [(ngModel)]="searchValue" id="prependedInput" class="form-control" size="16" type="text"
+            placeholder="What do you want to filter">
+        <span class="input-group-append">
+            <button (click)="search()" class="btn btn-info" type="button">Search</button>
+        </span>
+        <mat-spinner style="margin-left: 15px; position: relative; top:5px; color:#333333" [diameter]="30"
+            *ngIf="isSearching">
+        </mat-spinner>
+
+    </div>
+    <br>
+    <br>
+
+    <!-- <div class="col-lg-6"> -->
+    <!-- <div class="col-lg-8"> -->
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify"></i> View FoodItem Event
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>event</th>
+                        <th>blockno</th>
+                        <th>logno</th>
+                        <th>loghash</th>
+                        <th>logdate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let event of foodItemEventsShowed">
+                        <td>{{event.event | limitTo:10}}</td>
+                        <td>{{event.blockNumber | limitTo:10}}</td>
+                        <td>{{event.logno | limitTo: 10}}</td>
+                        <td>{{event.loghash | limitTo: 10}}</td>
+                        <td>{{event.logdate | limitTo: 10}}</td>
+                    </tr>
+                    <!-- <tr>
+                            <td>Samppa Nori</td>
+                            <td>2012/01/01</td>
+                            <td>Member</td>
+                            <td>
+                                <span class="badge badge-success">Active</span>
+                            </td>
+                        </tr> -->
+                </tbody>
+            </table>
+            <ul id="foodSectionTabLink" class="pagination">
+                <li class="page-item" *ngFor="let tab of tabs" (click)="changePage($event,tab)">
+                    <a class="page-link" >{{tab}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

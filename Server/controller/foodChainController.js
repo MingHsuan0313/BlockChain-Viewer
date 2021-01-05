@@ -24,15 +24,26 @@ module.exports = function (app) {
         if (logdate != undefined) {
             filterObject['logdate'] = logdate;
         }
-        filterObject['logno'] = '7122'
         console.log(req.query);
-        contract.getPastEvents("FoodSection", {
+        contract.getPastEvents("FoodItem", {
             filter: filterObject,
             fromBlock: 0,
             toBlock: "latest"
         }).then(async (events) => {
+            let responseObject = [];
+            for (let index = 0; index < events.length; index++) {
+                let event = {};
+                event['logdate'] = events[index]['returnValues']['logdate'];
+                event['loghash'] = events[index]['returnValues']['loghash'];
+                event['logno'] = events[index]['returnValues']['logno'];
+                event['blockNumber'] = events[index]['blockNumber'];
+                event['event'] = events[index]['event'];
+                responseObject.push(event);
+            }
+            res.status(200).send(JSON.stringify(responseObject))
+
             // console.log(events);
-            console.log(events);
+            // console.log(events);
             res.status(200).send(JSON.stringify(events));
         }).catch(err => {})
     })
@@ -41,14 +52,34 @@ module.exports = function (app) {
         let logno = req.query['logno'];
         let logname = req.query['logname'];
         let logorg = req.query['logorg'];
-        contract.getPastEvents("FoodSection", {
-            filter: {
-                title: ['綠茶']
-            },
+        let filterObject = {};
+        if (logno != undefined) {
+            filterObject['logno'] = logno;
+        }
+        if (loghash != undefined) {
+            filterObject['logname'] = logname;
+        }
+        if (logdate != undefined) {
+            filterObject['logorg'] = logorg;
+        }
+        contract.getPastEvents("FoodContent", {
+            filter: filterObject, 
             fromBlock: 0,
             toBlock: "latest"
         }).then(async (events) => {
             // console.log(events);
+            let responseObject = [];
+            for (let index = 0; index < events.length; index++) {
+                let event = {};
+                event['logname'] = events[index]['returnValues']['logname'];
+                event['logorg'] = events[index]['returnValues']['logorg'];
+                event['logno'] = events[index]['returnValues']['logno'];
+                event['blockNumber'] = events[index]['blockNumber'];
+                event['event'] = events[index]['event'];
+                responseObject.push(event);
+            }
+            res.status(200).send(JSON.stringify(responseObject))
+
             res.status(200).send(JSON.stringify(events));
         }).catch(err => {})
 
