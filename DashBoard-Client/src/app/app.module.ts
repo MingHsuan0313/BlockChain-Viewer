@@ -3,11 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
 import { ReactiveFormsModule } from '@angular/forms';
-=======
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
->>>>>>> e560ee972d7a07b1fead1f7cbe9e045850623c05
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';

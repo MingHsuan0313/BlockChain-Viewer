@@ -49,7 +49,6 @@ module.exports = function (app) {
         }).catch(err => {})
     })
 
-<<<<<<< HEAD
     app.post('/foodchain/foodImage', (req, res) => {
         console.log("Hello foodImage");
         console.log(req.body);
@@ -83,7 +82,7 @@ module.exports = function (app) {
             console.log(events);
             res.status(200).send(JSON.stringify(events));
         }).catch(err => {})
-=======
+    })
     app.get('/foodchain/foodcontent', validateCookie, (req, res) => {
         let logno = req.query['logno'];
         let logname = req.query['logname'];
@@ -182,6 +181,5 @@ module.exports = function (app) {
             }
             res.status(200).send(JSON.stringify(responseObject))
         }).catch(err => {});
->>>>>>> e560ee972d7a07b1fead1f7cbe9e045850623c05
     })
 }
